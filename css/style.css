@@ -1,0 +1,290 @@
+:root {
+  --highlight-color: yellow;
+  --font-family: "Roboto", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1d1d1d;
+  color: #fff;
+  position: relative;
+}
+
+/* aside */
+
+aside {
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 60px;
+  align-self: start;
+}
+
+aside .aside__logo {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background: #000;
+}
+
+aside .aside__logo a {
+  text-decoration: none;
+  color: var(--highlight-color);
+  font-size: 2.4rem;
+  font-family: "Dawning of a New Day", cursive;
+}
+
+aside ul li {
+  list-style: none;
+}
+
+aside ul li a {
+  color: #444444;
+}
+
+aside nav ul li {
+  text-align: center;
+  height: 74px;
+  width: 60px;
+  position: relative;
+}
+
+aside nav ul li a {
+  font-size: 30px;
+  text-decoration: none;
+  height: 74px;
+  width: 60px;
+  padding: 20px 0;
+  position: relative;
+  transition: font-size 0.1s;
+  z-index: 1;
+}
+
+aside nav ul li a {
+  z-index: 2;
+}
+
+aside .aside__social-links {
+  margin-bottom: 15px;
+}
+
+aside .aside__social-links ul li {
+  padding: 5px;
+}
+
+aside .aside__social-links ul li a {
+  font-size: 20px;
+}
+
+/* nav items after */
+
+nav ul li a::after {
+  content: "";
+  color: var(--highlight-color);
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 74px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+nav ul li::after {
+  content: "";
+  color: var(--highlight-color);
+  font-size: 1rem;
+  position: absolute;
+  top: 10%;
+  left: 0px;
+  width: 100%;
+  height: 74px;
+  transform: scale(0);
+}
+
+nav ul .nav__home::after {
+  content: "HOME";
+}
+
+nav ul .nav__about::after {
+  content: "ABOUT";
+}
+
+nav ul .nav__skills::after {
+  content: "SKILLS";
+}
+
+nav ul .nav__works::after {
+  content: "WORKS";
+}
+
+/* aside hover */
+
+aside ul li :hover,
+.current {
+  color: var(--highlight-color);
+}
+
+nav ul li:hover a {
+  opacity: 0;
+}
+
+nav ul li:hover::after {
+  transform: scale(1);
+}
+
+/* Page 1 */
+
+#page1 {
+  display: flex;
+  position: relative;
+}
+
+.page1__header {
+  position: absolute;
+  top: 60%;
+  left: calc(40% - 150px);
+}
+.page1__header h1 {
+  font-size: 4rem;
+  text-shadow: 1px 4px 5px black;
+  margin: 0;
+}
+
+.page1__header h3 {
+  background-color: var(--highlight-color);
+  color: black;
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
+}
+
+.page1__right,
+.page1__left {
+  height: 100vh;
+  width: 50%;
+}
+
+.page1__left {
+  background: url(../img/profile-img.jpg) no-repeat center center/cover;
+  width: 60%;
+}
+
+/* Page 2 - 3 */
+
+#page2,
+#page3 {
+  display: flex;
+}
+
+#page2 main,
+#page3 main {
+  max-width: 600px;
+  /* top / right / bottum /left */
+  margin: 10vh 8vw 5vh 15vw;
+}
+
+#page2 main h1,
+#page3 main h1 {
+  margin-top: 0;
+  font-size: 4rem;
+  color: var(--highlight-color);
+}
+
+#page2 main p,
+#page3 main p {
+  font-size: 1.2rem;
+}
+
+/* Page 4 */
+
+#page4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#page4 .page4__main {
+  max-width: 800px;
+  margin-left: 60px;
+  background-color: #f0f0f5;
+  color: #000;
+  height: 100%;
+  text-align: center;
+  padding: 0 50px;
+}
+
+#page4 .page4__main h1 {
+  font-size: 3rem;
+  margin: 50px;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+#page4 .page4__main h1::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  background-color: var(--highlight-color);
+  height: 15px;
+  width: 110%;
+  z-index: -1;
+}
+
+#page4 .page4__main .main__works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  grid-gap: 15px;
+}
+
+.main__works-grid .work-showcase {
+  height: 160px;
+  position: relative;
+  z-index: 0;
+}
+
+.main__works-grid .work-showcase::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: blue;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+#work-showcase1 {
+  background: url(../img/tesla-showcase.png) no-repeat center center/cover;
+}
+
+#work-showcase2 {
+  background: url(../img/hamburger-menu-showcase.png) no-repeat center
+    center/cover;
+}
+
+#work-showcase3 {
+  background: url(../img/hotle-website-showcase.png) no-repeat center
+    center/cover;
+}
