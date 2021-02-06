@@ -1,6 +1,10 @@
 /* All narrow screens  */
 
 @media (max-width: 1024px) {
+  aside .aside__social-links {
+    display: none;
+  }
+
   aside {
     flex-direction: row;
     justify-content: space-between;
@@ -90,6 +94,9 @@
     font-size: 5rem;
   }
 
+  aside nav {
+    margin-right: 10px;
+  }
   aside nav ul li {
     height: 120px;
     width: 100px;
